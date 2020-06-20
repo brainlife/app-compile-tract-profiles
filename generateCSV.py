@@ -47,7 +47,7 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 		data_means = data[[ x for x in list(data.keys()) if x.split('_')[1] == '1' ]]
 
 		for measures in diffusion_measures:
-			df[measures][tracts*len(nodes):(tracts*len(nodes))+len(nodes)] = data_means[measures+'_1']
+			df.loc[tracts*len(nodes),measures] = data_means[measures+'_1']
 
 	# sort by tract and subject ID
 	df.sort_values(by=['subjectID','structureID','nodeID'])

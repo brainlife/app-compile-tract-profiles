@@ -42,7 +42,15 @@ You can submit this App online at [https://doi.org/10.25663/brainlife.app.384](h
 
 ```json 
 { 
-  "profiles": "./inputdata/profiles"
+  "profiles": "./inputdata/profiles",
+    "_inputs": [
+        {
+            "id": "profiles",
+            "meta": {
+                "subject": "subj001",
+                "session": "1"
+            }
+    ]
 } 
 ``` 
 

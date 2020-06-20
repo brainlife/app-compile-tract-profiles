@@ -12,6 +12,8 @@ set -e
 [ ! -f ./tractmeasures/tract.csv ] && time singularity exec -e docker://brainlife/freesurfer-stats:1.2 ./generateCSV.py
 
 if [ -f ./tractmeasures/tracts.csv ]; then
+	mkdir -p "./tractmeasures/tractmeasures"
+	mv ./tractmeasures ./tractmeasures/tractmeasures/
 	echo "complete"
 	exit 0
 else

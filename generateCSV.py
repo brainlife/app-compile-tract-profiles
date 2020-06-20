@@ -50,7 +50,7 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 			df.loc[df.structureID==tractNames[tracts], measures] = list(data_means[measures+'_1'])
 
 	# sort by tract and subject ID
-	df.sort_values(['structureID','nodeID'])
+	df.sort_values(['structureID','nodeID'],ascending=False)
 	
 	# write out to csv
 	df.to_csv('./%s/tracts.csv' %(outdir), index=False)

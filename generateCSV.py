@@ -27,7 +27,7 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 		diffusion_measures = ['ad','fa','md','rd']
 	elif 'icvf' in diffusion_measures:
 		diffusion_measures = ['icvf','isovf','od']
-	else
+	else:
 		diffusion_measures = ['ndi','isovf','odi']
 
 	nodes = [ x for x in range(len(df_temp_reduced[diffusion_measures[0]+'_1'])) ]

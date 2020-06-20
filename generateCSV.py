@@ -25,7 +25,7 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 		diffusion_measures = ['ad','fa','md','rd','icvf','isovf','od']
 	elif 'fa' in diffusion_measures:
 		diffusion_measures = ['ad','fa','md','rd']
-	else 'icvf' in diffusion_measures:
+	elif 'icvf' in diffusion_measures:
 		diffusion_measures = ['icvf','isovf','od']
 	else
 		diffusion_measures = ['ndi','isovf','odi']

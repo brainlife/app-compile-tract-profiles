@@ -13,7 +13,7 @@ set -e
 
 if [ -f ./tractmeasures/tracts.csv ]; then
 	mkdir -p "./tractmeasures/tractmeasures"
-	mv ./tractmeasures ./tractmeasures/tractmeasures/
+	mv ./tractmeasures/tracts.csv ./tractmeasures/tractmeasures/
 	echo "complete"
 	exit 0
 else

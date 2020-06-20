@@ -11,7 +11,7 @@ set -e
 # generate csv that can be useful in MLC analyses
 [ ! -f ./tractmeasures/tract.csv ] && time singularity exec -e docker://brainlife/freesurfer-stats:1.2 ./generateCSV.py
 
-if [ -f ./tractmeasures/tract.csv ]; then
+if [ -f ./tractmeasures/tracts.csv ]; then
 	echo "complete"
 	exit 0
 else

@@ -19,12 +19,12 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 	diffusion_measures = [ x.split('_')[0] for x in list(df_temp_reduced.keys()) ]
 	
 	# depending on what's in the array, rearrange in a specific order I like
-	# if all(x in diffusion_measures for x in ['ndi','fa']):
-	# 	diffusion_measures = ['ad','fa','md','rd','ndi','isovf','odi']
-	# elif 'fa' in diffusion_measures:
-	# 	diffusion_measures = ['ad','fa','md','rd']
-	# else:
-	# 	diffusion_measures = ['ndi','isovf','odi']
+	if all(x in diffusion_measures for x in ['ndi','fa']):
+		diffusion_measures = ['ad','fa','md','rd','ndi','isovf','odi','snr']
+	elif 'fa' in diffusion_measures:
+		diffusion_measures = ['ad','fa','md','rd','snr']
+	else:
+		diffusion_measures = ['ndi','isovf','odi','snr']
 
 	nodes = [ x for x in range(len(df_temp_reduced[diffusion_measures[0]+'_1'])) ]
 	
@@ -47,10 +47,10 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 		data_means = data[[ x for x in list(data.keys()) if x.split('_')[1] == '1' ]]
 
 		for measures in diffusion_measures:
-			df.loc[tracts*len(nodes),measures] = data_means[measures+'_1']
+			df.loc[df.structureID==tractNames[tracts], measures] = list(data_means[measures+'_1'])
 
 	# sort by tract and subject ID
-	df.sort_values(by=['subjectID','structureID','nodeID'])
+	df.sort_values(['structureID','nodeID'])
 	
 	# write out to csv
 	df.to_csv('./%s/tracts.csv' %(outdir), index=False)

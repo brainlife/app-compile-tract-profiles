@@ -49,7 +49,8 @@ You can submit this App online at [https://doi.org/10.25663/brainlife.app.384](h
             "meta": {
                 "subject": "subj001",
                 "session": "1"
-            }
+                    }
+        }
     ]
 } 
 ``` 

@@ -22,6 +22,12 @@ Franco Pestilli (franpest@iu.edu)
 [![NSF-IIS-1912270](https://img.shields.io/badge/NSF_IIS-1912270-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1912270)
 [![NIH-NIBIB-R01EB029272](https://img.shields.io/badge/NIH_NIBIB-R01EB029272-green.svg)](https://grantome.com/grant/NIH/R01-EB029272-01)
 
+### Citations 
+
+Please cite the following articles when publishing papers that used data, code or other resources created by the brainlife.io community. 
+
+Yeatman JD, Dougherty RF, Myall NJ, Wandell BA, Feldman HM (2012) Tract Profiles of White Matter Properties: Automating Fiber-Tract Quantification. PLoS ONE 7(11): e49790. https://doi.org/10.1371/journal.pone.0049790
+
 ## Running the App 
 
 ### On Brainlife.io 

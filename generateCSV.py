@@ -21,9 +21,13 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 	# depending on what's in the array, rearrange in a specific order I like
 	if all(x in diffusion_measures for x in ['ndi','fa']):
 		diffusion_measures = ['ad','fa','md','rd','ndi','isovf','odi']
+	elif all(x in diffusion_measures for x in ['icvf','fa']):
+		diffusion_measures = ['ad','fa','md','rd','icvf','isovf','od']
 	elif 'fa' in diffusion_measures:
 		diffusion_measures = ['ad','fa','md','rd']
-	else:
+	else if 'icvf' in diffusion_measures:
+		diffusion_measures = ['icvf','isovf','od']
+	else
 		diffusion_measures = ['ndi','isovf','odi']
 
 	nodes = [ x for x in range(len(df_temp_reduced[diffusion_measures[0]+'_1'])) ]

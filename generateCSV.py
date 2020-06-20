@@ -20,11 +20,11 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 	
 	# depending on what's in the array, rearrange in a specific order I like
 	if all(x in diffusion_measures for x in ['ndi','fa']):
-		diffusion_measures = ['ad','fa','md','rd','ndi','isovf','odi']
+		diffusion_measures = ['ad','fa','md','rd','ndi','isovf','odi','snr']
 	elif 'fa' in diffusion_measures:
-		diffusion_measures = ['ad','fa','md','rd']
+		diffusion_measures = ['ad','fa','md','rd','snr']
 	else:
-		diffusion_measures = ['ndi','isovf','odi']
+		diffusion_measures = ['ndi','isovf','odi','snr']
 
 	nodes = [ x for x in range(len(df_temp_reduced[diffusion_measures[0]+'_1'])) ]
 	
@@ -50,7 +50,7 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 			df.loc[df.structureID==tractNames[tracts], measures] = list(data_means[measures+'_1'])
 
 	# sort by tract and subject ID
-	df.sort_values(['structureID','nodeID'],ascending=False)
+	df.sort_values(['structureID','nodeID'],inplace=True)
 	
 	# write out to csv
 	df.to_csv('./%s/tracts.csv' %(outdir), index=False)

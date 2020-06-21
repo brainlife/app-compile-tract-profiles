@@ -12,10 +12,9 @@ This app will the individual tract tract profiles csv's from the tractprofile da
 ### Contributors 
 
 - Soichi Hayashi (hayashi@iu.edu)
-Franco Pestilli (franpest@iu.edu) 
+- Franco Pestilli (frakkopesto@gmail.com)
 
 ### Funding 
-
 [![NSF-BCS-1734853](https://img.shields.io/badge/NSF_BCS-1734853-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1734853)
 [![NSF-BCS-1636893](https://img.shields.io/badge/NSF_BCS-1636893-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1636893)
 [![NSF-ACI-1916518](https://img.shields.io/badge/NSF_ACI-1916518-blue.svg)](https://nsf.gov/awardsearch/showAward?AWD_ID=1916518)
@@ -27,6 +26,8 @@ Franco Pestilli (franpest@iu.edu)
 Please cite the following articles when publishing papers that used data, code or other resources created by the brainlife.io community. 
 
 Yeatman JD, Dougherty RF, Myall NJ, Wandell BA, Feldman HM (2012) Tract Profiles of White Matter Properties: Automating Fiber-Tract Quantification. PLoS ONE 7(11): e49790. https://doi.org/10.1371/journal.pone.0049790
+
+Avesani, P., McPherson, B., Hayashi, S. et al. The open diffusion data derivatives, brain data upcycling via integrated publishing of derivatives and reproducible open cloud services. Sci Data 6, 69 (2019). https://doi.org/10.1038/s41597-019-0073-y
 
 ## Running the App 
 

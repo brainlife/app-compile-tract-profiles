@@ -15,22 +15,10 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 	
 	# make temporary data frame from one profiles to identify number of nodes and measures
 	df_temp = pd.read_csv(os.path.join(profiles,structureList[0]))
-	df_temp_reduced = df_temp[[ x for x in list(df_temp.keys()) if x.split('_')[1] == '1' ]]
+	df_temp_reduced = df_temp[[ x for x in list(df_temp.keys()) if x.split('_')[1] == 'mean' ]]
 	diffusion_measures = [ x.split('_')[0] for x in list(df_temp_reduced.keys()) ]
-	
-	# depending on what's in the array, rearrange in a specific order I like
-	if all(x in diffusion_measures for x in ['ndi','fa']):
-		diffusion_measures = ['ad','fa','md','rd','ndi','isovf','odi']
-	elif all(x in diffusion_measures for x in ['icvf','fa']):
-		diffusion_measures = ['ad','fa','md','rd','icvf','isovf','od']
-	elif 'fa' in diffusion_measures:
-		diffusion_measures = ['ad','fa','md','rd']
-	elif 'icvf' in diffusion_measures:
-		diffusion_measures = ['icvf','isovf','od']
-	else:
-		diffusion_measures = ['ndi','isovf','odi']
 
-	nodes = [ x for x in range(len(df_temp_reduced[diffusion_measures[0]+'_1'])) ]
+	nodes = [ x for x in range(len(df_temp_reduced[diffusion_measures[0]+'_mean'])) ]
 	
 	# clear temp data
 	del df_temp,df_temp_reduced
@@ -48,10 +36,10 @@ def generateSummaryCsv(subjectID,profiles,outdir):
 	for tracts in range(len(structureList)):
 
 		data = pd.read_csv(os.path.join(profiles,structureList[tracts]))
-		data_means = data[[ x for x in list(data.keys()) if x.split('_')[1] == '1' ]]
+		data_means = data[[ x for x in list(data.keys()) if x.split('_')[1] == 'mean' ]]
 
 		for measures in diffusion_measures:
-			df.loc[df.structureID==tractNames[tracts], measures] = list(data_means[measures+'_1'])
+			df.loc[df.structureID==tractNames[tracts], measures] = list(data_means[measures+'_mean'])
 
 	# sort by tract and subject ID
 	df.sort_values(['structureID','nodeID'],inplace=True)

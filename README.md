@@ -3,6 +3,26 @@
 
 # Compile tract profile measures to a summary csv 
 
+<!-- brainlife-app:begin (generated from the App manifest; edit the manifest, not this block) -->
+
+**Compiles the per-tract profile csv files of one subject's tractprofile output into a single long-format csv (subject, tract, node, mean of each measure) with pandas, for group analysis and machine learning.**
+
+Reads every *_profiles.csv in the tractprofile directory, keeps the *_mean columns, and writes output_FiberStats.csv with one row per tract and node and one column per diffusion measure, labelled with the subject ID from the input metadata. Use it to turn tract profiles into a tidy table; the README mentions tracts.csv but the code writes output_FiberStats.csv.
+
+Run it on brainlife.io: [https://doi.org/10.25663/brainlife.app.384](https://doi.org/10.25663/brainlife.app.384)
+
+| Input | Datatype | Required | Description |
+|---|---|---|---|
+| `profiles` | `neuro/tractprofile-deprecated` | yes | The path to the top directory containing the tract profile .csv files |
+
+| Output | Datatype | Description |
+|---|---|---|
+| `tractmeasures` | `neuro/tractmeasures` | The output is a combined version of the inputted .csvs file into a single .csv file analyses |
+
+Runtime: container `brainlife/freesurfer-stats:1.2`; 4 CPUs; 29 GB memory.
+
+<!-- brainlife-app:end -->
+
 This app will the individual tract tract profiles csv's from the tractprofile dataype into a single summary csv for group analysis and machine learning. This app takes in a tractprofile datatype. The app will output a csv entitled 'tracts.csv' that can be used for group statistics and machine learning.
 
 ### Authors 

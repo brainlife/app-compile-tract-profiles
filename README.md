@@ -12,7 +12,7 @@ This app will the individual tract tract profiles csv's from the tractprofile da
 ### Contributors 
 
 - Soichi Hayashi (hayashi@iu.edu)
-Franco Pestilli (franpest@iu.edu) 
+Franco Pestilli ([@francopestilli](https://github.com/francopestilli)) 
 
 ### Funding 
 
